@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.model2.mvc.common.Page;
@@ -48,7 +49,7 @@ public class ProductController {
 	//@Value("#{commonProperties['pageSize'] ?: 2}")
 	int pageSize;
 	
-	@RequestMapping("/addProduct.do")
+	@RequestMapping( value="addProduct", method=RequestMethod.GET )
 	public String addProduct(@ModelAttribute("product") Product product) throws Exception {
 		
 		System.out.println("/addProduct.do");
